@@ -15,15 +15,12 @@ import { ThxLayout } from "./thx/ThxLayout";
 import { Gap } from "@alfalab/core-components/gap";
 import { useState } from "react";
 import { StatusBadge } from "@alfalab/core-components/status-badge";
-import { List } from "@alfalab/core-components/list";
-import { BottomSheet } from "@alfalab/core-components/bottom-sheet";
 
 export const App = () => {
   const [loading, setLoading] = useState(false);
   const [thxShow, setThx] = useState(LS.getItem(LSKeys.ShowThx, false));
   const [transfer, setTransfer] = useState<string>("self");
   const [plan, setPlan] = useState<string>("");
-  const [expanded, setExpanded] = useState(false);
 
   const submit = () => {
     setLoading(true);
@@ -381,35 +378,6 @@ export const App = () => {
           >
             3 мес. бесплатно
           </Typography.Text>
-        </div>
-
-        <div onClick={(e) => e.stopPropagation()}>
-          <BottomSheet
-            title={
-              <Typography.TitleResponsive
-                tag="h3"
-                view="xsmall"
-                font="system"
-                weight="semibold"
-              >
-                Что входит в подписку
-              </Typography.TitleResponsive>
-            }
-            open={expanded}
-            onClose={() => setExpanded(false)}
-          >
-            <List tag="ul" marker="•">
-              <List.Item>+1 топовая категория кэшбэка</List.Item>
-              <List.Item>+1 попытка крутить барабан суперкэшбэка</List.Item>
-              <List.Item>Секретная подборка партнёров с кэшбэков</List.Item>
-              <List.Item>Увеличенный лимит кэшбэка</List.Item>
-              <List.Item>+1% годовых</List.Item>
-              <List.Item>Бесплатные уведомления</List.Item>
-              <List.Item>Бесплатные переводы</List.Item>
-              <List.Item>Бесплатное снятие наличных</List.Item>
-              <List.Item>Скидка 20% на комиссию на бирже</List.Item>
-            </List>
-          </BottomSheet>
         </div>
       </div>
 
