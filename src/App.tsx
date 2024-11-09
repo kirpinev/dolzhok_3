@@ -362,18 +362,7 @@ export const App = () => {
 
         <div
           className={appSt.best}
-          style={{
-            ...(plan === "smart" && { borderColor: "black" }),
-          }}
-          onClick={() => setPlan("smart")}
         >
-          {plan === "smart" && (
-            <StatusBadge
-              view="positive-checkmark"
-              size={20}
-              className={appSt.checkMark}
-            />
-          )}
           <Typography.Text tag="p" view="primary-large" weight="bold">
             Дадим доступ за друга
           </Typography.Text>
